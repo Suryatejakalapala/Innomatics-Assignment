@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Notes</title>
+    </head>
+    <body>
+        <h1>Notes</h1>
+        <form method="post" action="{{ url_for('add_note') }}">
+            <input type="text" name="note" placeholder="Enter note">
+            <button>Add Note</button>
+        </form>
+
+        {% if notes %}
+            <ul>
+                {% for note in notes %}
+                    <li>{{ note }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </body>
+</html>
